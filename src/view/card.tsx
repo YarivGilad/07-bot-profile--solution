@@ -1,22 +1,22 @@
 import styled from "styled-components";
-import { Thumb } from "./thumb.tsx";
 import { Robot } from "../types.ts";
+import { ImageLoader } from "./imageLoader.tsx";
 
 export function Card({ country, description, first_name, avatar }: Robot) {
   return (
-    <Div>
-      <Thumb image_url={avatar} />
+    <WrapperDiv>
+      <ImageLoader source={avatar} alt="avatar image" />
       <div className="texts-box">
         <h1>
           {first_name} from {country}
         </h1>
         <p>{description}</p>
       </div>
-    </Div>
+    </WrapperDiv>
   );
 }
 
-const Div = styled.div`
+const WrapperDiv = styled.div`
   padding: 2rem 2.8rem;
   cursor: pointer;
   display: flex;
@@ -28,7 +28,7 @@ const Div = styled.div`
       box-shadow: 0 0.4rem 1.5rem DimGrey;
       margin-bottom: 3rem;
       padding-bottom: 1rem;
-    }
+    }       
   }
 
   &:active {

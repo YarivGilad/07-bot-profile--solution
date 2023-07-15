@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Robot } from "../types.ts";
+import { ImageLoader } from "./imageLoader.tsx";
 
 export const Profile = ({
     id,
@@ -16,7 +17,8 @@ export const Profile = ({
     return (
         <Div>
             <div className="image-box">
-                <img src={avatar} alt="avatar" />
+                {/* <img src={avatar} alt="avatar" /> */}
+                <ImageLoader source={avatar as string} alt="avatar image" />
             </div>
             <div className="details-box">
                 <h2>
@@ -51,6 +53,7 @@ const Div = styled.div`
         img {
             border-radius: 50%;
             width: 30rem;
+            height: 30rem;
         }
     }
     div.details-box{
